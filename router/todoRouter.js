@@ -21,11 +21,30 @@ router.post("/createtodo", async (req, res)=>{
 })
 
 router.get("/todo", async (req, res)=>{
-    const todos = await Todo.find()
+    const sorted = req.query.sort;
+    const todos = await Todo.find().sort({text:sorted})
     res.render("todo", {
         todos
     })
 })
 
+router.get("/delete/:id", async (req, res)=> { //Tar bort data från databasen
+    console.log(req.params.id);
+    await Todo.deleteOne({_id:req.params.id}); //MÅSTE vara ett objekt {} och databas-nyckeln. Databas-nyckeln finns i compass el atlas
+    res.redirect("/todo");
+});
+
+router.get("/edit/:id", async (req, res) =>{ //Uppdaterar data
+
+    const response = await Todo.findById({_id:req.params.id});
+
+    res.render("edit", {response});
+});
+
+router.post("/edit/:id", async (req, res) =>{ //Skickar uppdaterad data till comment routen
+
+    await Todo.updateOne({_id:req.body._id}, {$set: {text: req.body.text}})
+    res.redirect("/todo");
+})
 
 module.exports = router;
