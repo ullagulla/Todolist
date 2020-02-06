@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(216, 112, 147, 0.459);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    .header-todo {
+        background-color: palevioletred;
+        padding: 20px;
+        text-align: center;
+    }
+    .my-todo-wrapper {
+        text-align: center;
+        .todo-wrapper {
+            margin: 10px;
+        }
+        .updateremove {
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        .add-new-todo {
+            margin-top: 15px;
+            input {
+                width: 220px;
+                padding: 10px;
+            }
+            button {
+                width: 100px;
+                padding: 10px;
+            }
+        }
+        .todos {
+            width: 200px;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}

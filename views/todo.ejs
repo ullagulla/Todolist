@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comment</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <div class="header-todo">TOODELOOO</div>
+
+    <div class="my-todo-wrapper">
+        <% todos.forEach((todo) => { %>
+        <div class="todo-wrapper">
+            <span class="todos"><%= todo.text %></span>
+            <!-- <span class="todos"><%= todo.author %></span> -->
+            <!-- <span class="todos"><%= todo.date %></spanclass="todos"> -->
+
+            <a href="/edit/<%=todo._id%>" class="updateremove">Update</a>
+            <a href="/delete/<%=todo._id%>" class="updateremove">Delete</a>
+
+            <% }) %>
+
+        </div>
+
+        <div>
+            <form class="add-new-todo" action="/createtodo" method="post">
+                <input type="text" name="text" id="" placeholder="Add a new todo to your list">
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+
+        <input type="text" name="text" id="" value="<%=response.text%>" required>
+        <input type="text" name="author" id="" value="<%=response.author%>" required>
+        <input type="text" name="_id" id="" value="<%=response._id%>" hidden>
+    
+        <button type="submit">Update</button>
+    
+    </form>
+</body>
+</html>

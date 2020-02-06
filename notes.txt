@@ -1,0 +1,110 @@
+steg 1: skapa en mapp för ditt projekt. launcha projektet och skapa en package.json fil med npm init. 
+steg 2: installera alla dependencies, 
+    - express (här har vi tillgång till body-parser)
+    --> ger oss controller/router 
+    - ejs 
+    ---> för views 
+    - mongoose  
+    ----> för databasen 
+
+    Kontrollera att alla dependencies finns i package.json 
+
+steg 3: vår filstruktur. vilka filer/mappar behöver vi. M - V - C 
+
+steg 4: välj vart vi vill börja antingen med model, med view eller med controller. 
+vi testar att börja från databasen, från model och index för att bygga detta.
+    - börja med att starta servern och kopplingen 
+    - skriv in kopplingen i main-filen 
+
+    - vi lägger in en port som man använder för att bvesäöka sidan. För klienten. 
+    - mongoose.connect kopplar in vår databas, detta görs innan porten. 
+    - connect-funktionen är en asynkropnfunktion som har ett promise. därför kan vi kedja kopplingen! 
+        vi har därför också tillgång till en funktion till - en arrayfunktion. 
+        mongoose kräver ett extra objekt för att inte skicka felmeddelanden i kopplingen. 
+
+steg 5: skapa en modell och ett schema för hur datan i databasen ska se ut. 
+    - i vårt exempel: vi vill att användare ska kunna posta kommentarer. (user / comment) 
+        det säger oss hur vi vill att datan i databasen ska se ut (ex. alla ska ha ett användarnamn, lösenord)
+    - vår databas innehåller Collections, nu ska vi i koden bestämma vad vår collections ska heta genom model och schema! 
+
+    - användare och comments är våra objekt, som innehåller data. vi gör ett varsitt schema för dem i modelsmappen. 
+    vi bestämmer här vad datan ska innehålla, ex. att varje User ska ha ett name som är en sträng. 
+    - i vår mångoose.model bestämmer vi namnet på vår kollektion. 
+    - när schemana är klara så exporterar vi dem. 
+
+steg 6: nu ska vi fixa vår router. alla våra modeller är klara, då ska vi börja koda så att vi kan hanetar och skapa datan. 
+    - för att skapa datan: kanske kan vi ha ett input-field? då kan användaren själv mata in datan. 
+    - vi skapar två routers åt vår data - en för user och en för comments. 
+    - vi använder här express Router, för att få en minifierad-version som hanterar våra routers. 
+
+steg 7: man använder post-metoden för att ta emot data, men i exempelt nu så skapar vi manuell data med hjälp av vårt schema. 
+        - vi skapar en asynkron funktion, för att datan ska kunnas skickas asynkront. på så sätt blockerar vi inte resten av sidan. 
+        - vi lägger en async på arrow-funktionen i vår route, och sen send() blir det som ska vänta in infon (await). 
+
+steg 8: vi behöver länka in vår skapade router i vår main-fil, för att den ska kunna visa datan. 
+    - vi måste först exportera genom module.exports, och sedan importera och använda genom app.use() i main-filen. 
+
+
+steg 9: vi kan använda find()-funktionen för att hitta något i databasen. Den behöver vara async pga vi inte vet hur mycket den hittar i db. 
+
+-----------------------------EXTRA------------------------------------------------------
+
+- vi kan skapa en config mapp med vår config info. Sedan kan vi importera den infon in i våra filer, så att vi slipper exposa våra lösenord/användarnamn.
+- i mappen skapar vi ett config-objekt med ex. vår databas url.
+    (const config = { databaseUrl: "vår url sträng" })
+- vi exporterar genom module.exports och plockar sedan in det i vår connection-fil. 
+    (config.databaseUrl)
+- sedan kan vi göra en .ignore-fil när vi pushar upp vårt projekt till git. 
+
+----------------------------------------------------------------------------------------
+
+steg 10: Skapa en funktion för att skicka användarens data genom ett inputfält. 
+    - aktivera body-parser i main-filen, för att datan ska kunna konverteras och användas.
+    - aktivera view-templaten i main-filen. ( app.set() )
+
+steg 11: i views-mappen: skapa filer för gränsnittet till användaren. Här skapar vi en html-fil i form av en .ejs-fil. 
+    - viktigt att inputfältets name är detsamma som det vi vill hämta sedan!
+    - vi kan ha en sida där man skapar kommentarer 
+    - vi har en sida där vi visar kommentarer som vi sparar i en array 
+        ---> i ejs-filen för att visa kommentarer: 
+        gör en forEach-loop för varje comment, det vi vill rendera. Kanske vill vi rendera det i en UL? 
+
+steg 12: i vår commentRouter, hämtar modellen, kopplar in router, exporterar. 
+    - i koden: gör en GET för att kunna visa sidan. 
+    vi gör en GET innuti vår route för makeCOmment-sidan. 
+    router.route("/makecomment")
+        
+        //vår get-request som renderar sidan makecomment.ejs 
+        .get((req, res)=> res.render("ejs-filen")); 
+        
+        .post(async (req, res) => {
+
+            //här skapas ett nytt dokument till databasens collection comments
+
+            await new Comment({ text: req.body.text, author: req.body.author}).save(); 
+
+            //här skickar vi tillsut vidare genom redirect till sidan där vi visar kommentarerna  
+            res.redirect("/newcomment"); 
+
+        }); 
+
+    - router.route() gör att vi kan kedja alla CRUD-operations 
+    - vi skickar vidare användaren till sdian newcomment: 
+        
+        router.get("/newcomment", async (req, res) => {
+
+            //findNewCOmment finns i loopen 
+            //efter find() har vi möjlighet att anamma olika soteringar av datan 
+            const findNewcomment = await Comment.find(); 
+            res.render("newcomment", { findNewCOmment }); 
+
+
+
+        }); 
+
+
+
+- i html-5 behövs inte alltid form action="vår route", för den har det som default. 
+det kan dock vara en fördel att ha med när vi skapar formulär, pga 
+
+- name-egenskapen lägger infon i request.body! därför är det viktigt vad man döper dem till. 
