@@ -15,14 +15,16 @@ body {
         .updateremove {
             text-decoration: none;
             color: black;
-            border: 1px solid black;
             padding: 5px;
         }
         .add-new-todo {
             margin-top: 15px;
-            input {
+            #input1 {
                 width: 220px;
                 padding: 10px;
+            }
+            #input2 {
+                padding: 8px;
             }
             button {
                 width: 100px;

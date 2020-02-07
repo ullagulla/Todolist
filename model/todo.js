@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const schemaTodo = new mongoose.Schema(
     {
-        text: {type: String, required: true, min: 5},
+        text: {type: String, required: true, minlength: 5},
     }
 )
 

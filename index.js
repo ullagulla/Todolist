@@ -7,6 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "css")));//path.join tar mappen som heter public(eller css). Där ska alla SCSS, CSS och bilder finnas
+app.use(express.static(path.join(__dirname, "public")));//path.join tar mappen som heter public(eller css). Där ska alla SCSS, CSS och bilder finnas
 app.set("view engine", "ejs");
 
 //router 

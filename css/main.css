@@ -13,13 +13,14 @@ body {
     body .my-todo-wrapper .updateremove {
       text-decoration: none;
       color: black;
-      border: 1px solid black;
       padding: 5px; }
     body .my-todo-wrapper .add-new-todo {
       margin-top: 15px; }
-      body .my-todo-wrapper .add-new-todo input {
+      body .my-todo-wrapper .add-new-todo #input1 {
         width: 220px;
         padding: 10px; }
+      body .my-todo-wrapper .add-new-todo #input2 {
+        padding: 8px; }
       body .my-todo-wrapper .add-new-todo button {
         width: 100px;
         padding: 10px; }

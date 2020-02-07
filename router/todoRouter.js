@@ -43,7 +43,7 @@ router.get("/edit/:id", async (req, res) =>{ //Uppdaterar data
 
 router.post("/edit/:id", async (req, res) =>{ //Skickar uppdaterad data till comment routen
 
-    await Todo.updateOne({_id:req.body._id}, {$set: {text: req.body.text}})
+    await Todo.updateOne({_id:req.params.id}, {$set: {text: req.body.text}}, {runValidators: true})
     res.redirect("/todo");
 })
 
