@@ -1,44 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My todolist</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" href="/main.css">
-    <script src="/public/main.js"></script>
-</head>
+<%- include("header.ejs") %>
 
 <body>
-    <div class="header-todo">TOODELOOO</div>
+    <div class="todo-container">
+        <div class="header-todo">Your todo list</div>
 
-    <div class="my-todo-wrapper">
+        <div class="my-todo-wrapper">
 
-        <div>
-            <form class="add-new-todo" action="/createtodo" method="post">
-                <input type="text" name="text" id="input1" placeholder="Add a new todo to your list">
-                <input type="date" name="date" id="input2" placeholder="När ska det vara klart?">
-                <button type="submit" id="add-btn">Add</button>
-            </form>
-        </div>
+            <div class="add-todo-wrapper">
+                <form class="add-new-todo" action="/createtodo" method="post">
+                    <input type="text" name="text" id="input1" placeholder="Vad ska du göra?">
+                    <input type="date" name="date" id="input2" placeholder="När?">
+                    <button type="submit" id="add-btn">Add</button>
+                </form>
+            </div>
 
-        <% todos.forEach((todo) => { %>
-        <div class="todo-wrapper">
-            <span class="todos"><%= todo.text %></span>
-            <!-- <span class="todos"><%= todo.author %></span> -->
-            <!-- <span class="todos"><%= todo.date %></spanclass="todos"> -->
-
-            <a href="/edit/<%=todo._id%>" class="updateremove"><span class="fas fa-edit"></span></a>
-            <a href="/delete/<%=todo._id%>" class="updateremove"><span class="fas fa-times"></span></a>
-
+            <% todos.forEach((todo) => { %>
+            <div class="todo-wrapper">
+                <span class="todos"><i class="far fa-check-circle"></i><%= todo.text %></span>
+                <span class="todos" id="todo-date"><%= todo.date %></span>
+                <!-- <span class="todos"><%= todo.date %></spanclass="todos"> -->
+                <div class="updateremove-wrapper">
+                    <a href="/edit/<%=todo._id%>" class="updateremove"><span class="far fa-edit"></span></a>
+                    <a href="/delete/<%=todo._id%>" class="updateremove"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
             <% }) %>
 
+            <div class="sort-wrapper">
+                <a href="/todo/?sort=1">Datum <i class="fas fa-angle-up"></i></a>
+                <a href="/todo/?sort=-1">Datum <i class="fas fa-angle-down"></i></a>
+            </div>
+
+            <div class="pagination-wrapper">
+                <i class="fas fa-angle-left"></i>
+                <a class="page-btn" id="btn1" href="/todo/?page=1">1</a>
+                <a class="page-btn" id="btn2" href="/todo/?page=2">2</a>
+                <a class="page-btn" id="btn2" href="/todo/?page=3">3</a>
+                <i class="fas fa-angle-right"></i>
+            </div>
+
+            <!-- <% todos.forEach((comment) => { %>
+            <% if (todos.length > 4) { %>
+                <script>
+                document.getElementById("btn1").style.display = "none";
+                document.getElementById("btn2").style.display = "none";
+                </script>
+            <% } %>
+            <% }) %> -->
         </div>
-
     </div>
-
 </body>
 
 </html>

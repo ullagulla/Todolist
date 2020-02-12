@@ -1,31 +1,91 @@
+body .header-edit {
+  text-transform: uppercase;
+  font-size: 30px;
+  padding: 20px;
+  text-align: center; }
+
+body .edit-wrapper {
+  margin-left: 57%;
+  margin-right: auto;
+  width: 500px; }
+  body .edit-wrapper input {
+    width: 200px;
+    padding: 10px; }
+  body .edit-wrapper #input2 {
+    width: 125px; }
+  body .edit-wrapper input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none; }
+  body .edit-wrapper button {
+    width: 80px;
+    padding: 11px; }
+
 body {
-  background-color: rgba(216, 112, 147, 0.459);
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0; }
-  body .header-todo {
-    background-color: palevioletred;
-    padding: 20px;
-    text-align: center; }
-  body .my-todo-wrapper {
-    text-align: center; }
-    body .my-todo-wrapper .todo-wrapper {
-      margin: 10px; }
-    body .my-todo-wrapper .updateremove {
-      text-decoration: none;
-      color: black;
-      padding: 5px; }
-    body .my-todo-wrapper .add-new-todo {
-      margin-top: 15px; }
-      body .my-todo-wrapper .add-new-todo #input1 {
+  background-image: url("../414717-PD6STJ-369.jpg");
+  background-size: cover;
+  background-position-y: -210px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 18px; }
+  body .todo-container {
+    margin-left: 57%;
+    margin-right: auto;
+    width: 500px; }
+    body .todo-container .header-todo {
+      text-transform: uppercase;
+      font-size: 30px;
+      padding: 20px;
+      text-align: center; }
+    body .todo-container .my-todo-wrapper {
+      height: 500px; }
+      body .todo-container .my-todo-wrapper .todo-wrapper {
+        margin: 10px; }
+      body .todo-container .my-todo-wrapper .updateremove-wrapper {
+        display: inline-block;
+        text-align: end;
+        width: 80px;
+        margin-left: 7px; }
+        body .todo-container .my-todo-wrapper .updateremove-wrapper .updateremove {
+          text-decoration: none;
+          color: black;
+          padding: 5px; }
+      body .todo-container .my-todo-wrapper .add-todo-wrapper {
+        text-align: center; }
+        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
+          margin-top: 15px; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input {
+            width: 200px;
+            padding: 10px; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
+            width: 125px; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"]::-webkit-inner-spin-button {
+            display: none;
+            -webkit-appearance: none; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
+            width: 80px;
+            padding: 11px; }
+      body .todo-container .my-todo-wrapper .todos {
+        margin: 0;
         width: 220px;
-        padding: 10px; }
-      body .my-todo-wrapper .add-new-todo #input2 {
-        padding: 8px; }
-      body .my-todo-wrapper .add-new-todo button {
-        width: 100px;
-        padding: 10px; }
-    body .my-todo-wrapper .todos {
-      width: 200px;
-      display: inline-block;
-      margin-left: 10px;
-      margin-right: 10px; }
+        display: inline-block;
+        margin-left: 5px; }
+        body .todo-container .my-todo-wrapper .todos i {
+          margin-right: 10px; }
+      body .todo-container .my-todo-wrapper #todo-date {
+        text-align: center;
+        width: 149px;
+        margin: 0; }
+    body .todo-container .sort-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 100px; }
+      body .todo-container .sort-wrapper a {
+        color: black;
+        text-decoration: none; }
+    body .todo-container .pagination-wrapper {
+      text-align: center;
+      margin-top: 10px; }
+      body .todo-container .pagination-wrapper a {
+        color: black;
+        font-weight: bold; }

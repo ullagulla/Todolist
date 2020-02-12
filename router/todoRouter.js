@@ -9,7 +9,8 @@ router.get("/", (req, res)=>{
 
 router.post("/createtodo", async (req, res)=>{
     const todo = new Todo({
-        text: req.body.text
+        text: req.body.text,
+        date: req.body.date
     })
     await todo.save((error, success)=>{
         if (error) {
@@ -20,9 +21,17 @@ router.post("/createtodo", async (req, res)=>{
     })
 })
 
+const items = 5; //global variabel, okej att läggas utanför funktionen
+
 router.get("/todo", async (req, res)=>{
-    const sorted = req.query.sort;
-    const todos = await Todo.find().sort({text:sorted})
+    const page = req.query.page; //Plockar ut query page (sidonumret i url:en)
+    const sortDate = req.query.sort;
+    const todos = await Todo
+    .find()
+    .sort({date:sortDate})
+    .skip(  (page-1) * items)//Använda skip-funktionen för att använda pagination. Om vi är på första sidan
+    // så blir det page-1 (alltså 1-1=0*3 vilket blir att vi inte skippar några produkter osv)
+    .limit(items)//Visar bara tre produkter
     res.render("todo", {
         todos
     })
@@ -43,7 +52,7 @@ router.get("/edit/:id", async (req, res) =>{ //Uppdaterar data
 
 router.post("/edit/:id", async (req, res) =>{ //Skickar uppdaterad data till comment routen
 
-    await Todo.updateOne({_id:req.params.id}, {$set: {text: req.body.text}}, {runValidators: true})
+    await Todo.updateOne({_id:req.params.id}, {$set: {text: req.body.text, date: req.body.date}}, {runValidators: true})
     res.redirect("/todo");
 })
 

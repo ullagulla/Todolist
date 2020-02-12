@@ -1,41 +1,107 @@
+@import "edit";
+
 body {
-    background-color: rgba(216, 112, 147, 0.459);
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    .header-todo {
-        background-color: palevioletred;
-        padding: 20px;
-        text-align: center;
-    }
-    .my-todo-wrapper {
-        text-align: center;
-        .todo-wrapper {
-            margin: 10px;
+    background-image: url("../414717-PD6STJ-369.jpg");
+    background-size: cover;
+    background-position-y: -210px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 18px;
+
+    .todo-container {
+        margin-left: 57%;
+        margin-right: auto;
+        width: 500px;
+
+        .header-todo {
+            text-transform: uppercase;
+            font-size: 30px;
+            padding: 20px;
+            text-align: center;
         }
-        .updateremove {
-            text-decoration: none;
-            color: black;
-            padding: 5px;
+
+        .my-todo-wrapper {
+            height: 500px;
+
+            .todo-wrapper {
+                margin: 10px;
+            }
+
+            .updateremove-wrapper {
+                display: inline-block;
+                text-align: end;
+                width: 80px;
+                margin-left: 7px;
+                .updateremove {
+                    text-decoration: none;
+                    color: black;
+                    padding: 5px;
+                }
         }
-        .add-new-todo {
-            margin-top: 15px;
-            #input1 {
+
+            .add-todo-wrapper {
+                text-align: center;
+                .add-new-todo {
+                    margin-top: 15px;
+
+                    input {
+                        width: 200px;
+                        padding: 10px;
+                    }
+
+                    #input2 {
+                        width: 125px;
+                    }
+
+                    input[type="date"]::-webkit-inner-spin-button {
+                        display: none;
+                        -webkit-appearance: none;
+                    }
+
+                    button {
+                        width: 80px;
+                        padding: 11px;
+                    }
+                }
+            }
+
+            .todos {
+                margin: 0;
                 width: 220px;
-                padding: 10px;
+                display: inline-block;
+                margin-left: 5px;
+                i {
+                    margin-right: 10px;
+                }
             }
-            #input2 {
-                padding: 8px;
-            }
-            button {
-                width: 100px;
-                padding: 10px;
+
+            #todo-date {
+                text-align: center;
+                width: 149px;
+                margin: 0;
             }
         }
-        .todos {
-            width: 200px;
-            display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
+
+        .sort-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 100px;
+
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        }
+
+        .pagination-wrapper {
+            text-align: center;
+            margin-top: 10px;
+
+            a {
+                color: black;
+                font-weight: bold;
+            }
         }
     }
 }
