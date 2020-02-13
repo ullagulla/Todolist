@@ -21,11 +21,12 @@ body .edit-wrapper {
     padding: 11px; }
 
 body {
-  background-image: url("../414717-PD6STJ-369.jpg");
+  background-image: url("../pictures/414717-PD6STJ-369.jpg");
   background-size: cover;
   background-position-y: -210px;
   font-family: 'Shadows Into Light', cursive;
-  font-size: 18px; }
+  font-size: 18px;
+  color: black; }
   body .todo-container {
     margin-left: 57%;
     margin-right: auto;
@@ -52,11 +53,18 @@ body {
         text-align: center; }
         body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
           margin-top: 15px; }
-          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input {
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
             width: 200px;
-            padding: 10px; }
+            padding: 11px; }
+            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1::placeholder {
+              font-family: 'Shadows Into Light', cursive;
+              font-size: 16px; }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
-            width: 125px; }
+            width: 125px;
+            padding: 5px; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"] {
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 16px; }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"]::-webkit-inner-spin-button {
             display: none;
             -webkit-appearance: none; }
@@ -64,13 +72,19 @@ body {
             width: 80px;
             padding: 11px; }
       body .todo-container .my-todo-wrapper .todos {
+        word-break: break-word;
         margin: 0;
         width: 220px;
         display: inline-block;
         margin-left: 5px; }
         body .todo-container .my-todo-wrapper .todos i {
           margin-right: 10px; }
-      body .todo-container .my-todo-wrapper #todo-date {
+          body .todo-container .my-todo-wrapper .todos i:hover {
+            color: #987251;
+            cursor: pointer; }
+      body .todo-container .my-todo-wrapper .todos-active {
+        text-decoration: line-through; }
+      body .todo-container .my-todo-wrapper .todo-date {
         text-align: center;
         width: 149px;
         margin: 0; }

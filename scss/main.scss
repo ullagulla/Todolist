@@ -1,11 +1,12 @@
 @import "edit";
 
 body {
-    background-image: url("../414717-PD6STJ-369.jpg");
+    background-image: url("../pictures/414717-PD6STJ-369.jpg");
     background-size: cover;
     background-position-y: -210px;
     font-family: 'Shadows Into Light', cursive;
     font-size: 18px;
+    color: black;
 
     .todo-container {
         margin-left: 57%;
@@ -43,15 +44,25 @@ body {
                 .add-new-todo {
                     margin-top: 15px;
 
-                    input {
+                    #input1 {
                         width: 200px;
-                        padding: 10px;
+                        padding: 11px;
+                        &::placeholder{
+                            font-family: 'Shadows Into Light', cursive;
+                            font-size: 16px;
+                        }
                     }
 
                     #input2 {
                         width: 125px;
+                        padding: 5px;
                     }
 
+                    input[type="date"] {
+                        font-family: 'Shadows Into Light', cursive;
+                        font-size: 16px;
+                    }
+                    
                     input[type="date"]::-webkit-inner-spin-button {
                         display: none;
                         -webkit-appearance: none;
@@ -65,16 +76,25 @@ body {
             }
 
             .todos {
+                word-break: break-word;
                 margin: 0;
                 width: 220px;
                 display: inline-block;
                 margin-left: 5px;
                 i {
                     margin-right: 10px;
+                    &:hover {
+                        color: #987251;
+                        cursor: pointer;
+                    }
                 }
             }
 
-            #todo-date {
+            .todos-active {
+                text-decoration: line-through;
+            }
+
+            .todo-date {
                 text-align: center;
                 width: 149px;
                 margin: 0;

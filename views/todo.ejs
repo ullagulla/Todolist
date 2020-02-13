@@ -17,7 +17,7 @@
             <% todos.forEach((todo) => { %>
             <div class="todo-wrapper">
                 <span class="todos"><i class="far fa-check-circle"></i><%= todo.text %></span>
-                <span class="todos" id="todo-date"><%= todo.date %></span>
+                <span class="todos todo-date"><%= todo.date %></span>
                 <!-- <span class="todos"><%= todo.date %></spanclass="todos"> -->
                 <div class="updateremove-wrapper">
                     <a href="/edit/<%=todo._id%>" class="updateremove"><span class="far fa-edit"></span></a>
@@ -27,8 +27,8 @@
             <% }) %>
 
             <div class="sort-wrapper">
-                <a href="/todo/?sort=1">Datum <i class="fas fa-angle-up"></i></a>
-                <a href="/todo/?sort=-1">Datum <i class="fas fa-angle-down"></i></a>
+                <a href="/todo/?sort=1">Sortera efter datum fallande</a>
+                <a href="/todo/?sort=-1">Sortera efter datum stigande</a>
             </div>
 
             <div class="pagination-wrapper">
