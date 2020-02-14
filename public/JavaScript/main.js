@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $(".todos").click(function(){
+    $(".todo-text").click(function(){
         $(this).toggleClass("todos-active");
     })
 

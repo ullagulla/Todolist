@@ -16,12 +16,12 @@
 
             <% todos.forEach((todo) => { %>
             <div class="todo-wrapper">
-                <span class="todos"><i class="far fa-check-circle"></i><%= todo.text %></span>
+                <span class="todos todo-text"><i class="far fa-check-circle"></i><%= todo.text %></span>
                 <span class="todos todo-date"><%= todo.date %></span>
                 <!-- <span class="todos"><%= todo.date %></spanclass="todos"> -->
                 <div class="updateremove-wrapper">
-                    <a href="/edit/<%=todo._id%>" class="updateremove"><span class="far fa-edit"></span></a>
-                    <a href="/delete/<%=todo._id%>" class="updateremove"><i class="far fa-trash-alt"></i></a>
+                    <a href="/edit/<%=todo._id%>" class="updateremove"><span class="far fa-edit" id="update"></span></a>
+                    <a href="/delete/<%=todo._id%>" class="updateremove"><i class="far fa-trash-alt" id="remove"></i></a>
                 </div>
             </div>
             <% }) %>

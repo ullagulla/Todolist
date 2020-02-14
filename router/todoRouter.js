@@ -37,7 +37,6 @@ router.get("/todo", async (req, res)=>{
 })
 
 router.get("/delete/:id", async (req, res)=> { //Tar bort data från databasen
-    console.log(req.params.id)
     await Todo.deleteOne({_id:req.params.id}) //MÅSTE vara ett objekt {} och databas-nyckeln. Databas-nyckeln finns i compass el atlas
     res.redirect("/todo")
 })
