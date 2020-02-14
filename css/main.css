@@ -21,6 +21,8 @@ body .edit-wrapper {
     padding: 11px; }
 
 body {
+  height: 100%;
+  position: relative;
   background-image: url("../pictures/414717-PD6STJ-369.jpg");
   background-size: cover;
   background-position-y: -210px;
@@ -97,10 +99,14 @@ body {
       body .todo-container .sort-wrapper a {
         color: black;
         text-decoration: none; }
-    body .todo-container .pagination-wrapper {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      text-align: center;
-      margin-top: 10px; }
-      body .todo-container .pagination-wrapper a {
-        color: black; }
+
+.pagination-wrapper {
+  position: absolute;
+  bottom: -100;
+  left: 72%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px; }
+  .pagination-wrapper a {
+    color: black; }

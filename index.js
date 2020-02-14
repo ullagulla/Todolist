@@ -25,3 +25,5 @@ mongoose.connect(config.databaseURL, options).then(() => {
     //app is listening to port 
     app.listen(port);
 });
+
+module.exports = app

@@ -2,6 +2,7 @@
 
 <body>
     <div class="todo-container">
+        <small class="small"><a href="/about">About</a></small>
         <div class="header-todo">Your todo list</div>
 
         <div class="my-todo-wrapper">
@@ -21,33 +22,24 @@
                 <!-- <span class="todos"><%= todo.date %></spanclass="todos"> -->
                 <div class="updateremove-wrapper">
                     <a href="/edit/<%=todo._id%>" class="updateremove"><span class="far fa-edit" id="update"></span></a>
-                    <a href="/delete/<%=todo._id%>" class="updateremove"><i class="far fa-trash-alt" id="remove"></i></a>
+                    <a href="/delete/<%=todo._id%>" class="updateremove"><i class="far fa-trash-alt"
+                            id="remove"></i></a>
                 </div>
             </div>
             <% }) %>
 
             <div class="sort-wrapper">
-                <a href="/todo/?sort=1">Sortera efter datum fallande</a>
-                <a href="/todo/?sort=-1">Sortera efter datum stigande</a>
+                <a href="/todo/?sort=1">Sortera datum efter fallande</a>
+                <a href="/todo/?sort=-1">Sortera datum efter stigande</a>
             </div>
-
-            <div class="pagination-wrapper">
-                <i class="fas fa-angle-left"></i>
-                <a class="page-btn" id="btn1" href="/todo/?page=1">1</a>
-                <a class="page-btn" id="btn2" href="/todo/?page=2">2</a>
-                <a class="page-btn" id="btn2" href="/todo/?page=3">3</a>
-                <i class="fas fa-angle-right"></i>
-            </div>
-
-            <!-- <% todos.forEach((comment) => { %>
-            <% if (todos.length > 4) { %>
-                <script>
-                document.getElementById("btn1").style.display = "none";
-                document.getElementById("btn2").style.display = "none";
-                </script>
-            <% } %>
-            <% }) %> -->
         </div>
+    </div>
+    <div class="pagination-wrapper">
+        <i class="fas fa-angle-left"></i>
+        <a class="page-btn" id="btn1" href="/todo/?page=1">1</a>
+        <a class="page-btn" id="btn2" href="/todo/?page=2">2</a>
+        <a class="page-btn" id="btn2" href="/todo/?page=3">3</a>
+        <i class="fas fa-angle-right"></i>
     </div>
 </body>
 
