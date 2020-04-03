@@ -3,7 +3,17 @@ const Todo = require("../model/todo")
 
 const router = express.Router()
 
-router.get("/", (req, res)=>{
+router.get("/", async (req, res)=>{
+    const page = req.query.page
+    const sortDate = req.query.sort
+    const todos = await Todo
+    .find()
+    .sort({date:sortDate})
+    .skip(  (page-1) * items)
+    .limit(items)
+    res.render("todo", {
+        todos
+    })
     res.render("todo")
 })
 
