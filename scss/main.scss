@@ -21,7 +21,7 @@
 body {
     background-image: url("../pictures/414717-PD6STJ-369.jpg");
     background-size: cover;
-    background-position-x: -390px;
+    background-position-x: -430px;
     font-size: 14px;
 
     @include large-tablet() {
@@ -35,7 +35,6 @@ body {
     }
 
     .todo-container {
-        margin-left: 15%;
         width: 100%;
         @include desktop(){
             margin-left: 57%;
@@ -54,6 +53,7 @@ body {
             height: 500px;
 
             .todo-wrapper {
+                display: flex;
                 margin: 10px;
             }
 
@@ -71,19 +71,22 @@ body {
             }
 
             .add-todo-wrapper {
+                margin-left: 10%;
+                display: flex;
+                justify-content: center;
                 @include desktop(){
                 text-align: center;
+                display: block;
                 }
 
                 .add-new-todo {
-                    margin-left: 26px;
                     margin-top: 15px;
                     @include desktop(){
                         margin-left: 0;
                     }
 
                     #input1 {
-                        width: 140px;
+                        width: 100px;
                         padding: 11px;
                         @include desktop(){
                         width: 200px;
@@ -99,7 +102,7 @@ body {
                     }
 
                     #input2 {
-                        width: 110px;
+                        width: 100px;
                         padding: 8px;
 
                         @include desktop(){
@@ -134,8 +137,6 @@ body {
             }
 
             .todos {
-                display: inline-block;
-                width: 130px;
                 margin-left: 15px;
                 @include desktop(){
                 word-break: break-word;
@@ -156,10 +157,16 @@ body {
             .todos-active {
                 text-decoration: line-through;
             }
+            .todo-text {
+                margin-left: 35px;
+                display: inline-block;
+                width: 230px;
+                @include desktop(){
+                    margin-left: 0;
+                }
+            }
 
             .todo-date {
-                display: inline-block;
-                text-align: end;
                 width: 130px;
                 margin: 0;
                 @include desktop(){
@@ -171,7 +178,6 @@ body {
         }
 
         .sort-wrapper {
-            width: 75%;
             margin-left: 15px;
             display: flex;
             flex-direction: row;

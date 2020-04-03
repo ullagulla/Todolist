@@ -23,7 +23,7 @@ body .edit-wrapper {
 body {
   background-image: url("../pictures/414717-PD6STJ-369.jpg");
   background-size: cover;
-  background-position-x: -390px;
+  background-position-x: -430px;
   font-size: 14px; }
   @media (min-width: 768px) {
     body {
@@ -35,7 +35,6 @@ body {
       font-size: 18px;
       color: black; } }
   body .todo-container {
-    margin-left: 15%;
     width: 100%; }
     @media (min-width: 990px) {
       body .todo-container {
@@ -50,6 +49,7 @@ body {
     body .todo-container .my-todo-wrapper {
       height: 500px; }
       body .todo-container .my-todo-wrapper .todo-wrapper {
+        display: flex;
         margin: 10px; }
       body .todo-container .my-todo-wrapper .updateremove-wrapper {
         display: inline-block;
@@ -60,52 +60,54 @@ body {
           text-decoration: none;
           color: black;
           padding: 5px; }
-      @media (min-width: 990px) {
-        body .todo-container .my-todo-wrapper .add-todo-wrapper {
-          text-align: center; } }
-      body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
-        margin-left: 26px;
-        margin-top: 15px; }
+      body .todo-container .my-todo-wrapper .add-todo-wrapper {
+        margin-left: 10%;
+        display: flex;
+        justify-content: center; }
         @media (min-width: 990px) {
-          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
-            margin-left: 0; } }
-        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
-          width: 140px;
-          padding: 11px; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper {
+            text-align: center;
+            display: block; } }
+        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
+          margin-top: 15px; }
           @media (min-width: 990px) {
-            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
-              width: 200px; } }
-          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1::placeholder {
-            font-size: 12px;
-            font-family: 'Shadows Into Light', cursive; }
+            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
+              margin-left: 0; } }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
+            width: 100px;
+            padding: 11px; }
             @media (min-width: 990px) {
-              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1::placeholder {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
+                width: 200px; } }
+            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1::placeholder {
+              font-size: 12px;
+              font-family: 'Shadows Into Light', cursive; }
+              @media (min-width: 990px) {
+                body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1::placeholder {
+                  font-size: 16px; } }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
+            width: 100px;
+            padding: 8px; }
+            @media (min-width: 990px) {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
+                width: 125px;
+                padding: 5px; } }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"] {
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 12px; }
+            @media (min-width: 990px) {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"] {
                 font-size: 16px; } }
-        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
-          width: 110px;
-          padding: 8px; }
-          @media (min-width: 990px) {
-            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
-              width: 125px;
-              padding: 5px; } }
-        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"] {
-          font-family: 'Shadows Into Light', cursive;
-          font-size: 12px; }
-          @media (min-width: 990px) {
-            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"] {
-              font-size: 16px; } }
-        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"]::-webkit-inner-spin-button {
-          display: none;
-          -webkit-appearance: none; }
-        body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
-          width: 50px;
-          padding: 11px; }
-          @media (min-width: 990px) {
-            body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
-              width: 80px; } }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"]::-webkit-inner-spin-button {
+            display: none;
+            -webkit-appearance: none; }
+          body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
+            width: 50px;
+            padding: 11px; }
+            @media (min-width: 990px) {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
+                width: 80px; } }
       body .todo-container .my-todo-wrapper .todos {
-        display: inline-block;
-        width: 130px;
         margin-left: 15px; }
         @media (min-width: 990px) {
           body .todo-container .my-todo-wrapper .todos {
@@ -119,9 +121,14 @@ body {
             cursor: pointer; }
       body .todo-container .my-todo-wrapper .todos-active {
         text-decoration: line-through; }
-      body .todo-container .my-todo-wrapper .todo-date {
+      body .todo-container .my-todo-wrapper .todo-text {
+        margin-left: 35px;
         display: inline-block;
-        text-align: end;
+        width: 230px; }
+        @media (min-width: 990px) {
+          body .todo-container .my-todo-wrapper .todo-text {
+            margin-left: 0; } }
+      body .todo-container .my-todo-wrapper .todo-date {
         width: 130px;
         margin: 0; }
         @media (min-width: 990px) {
@@ -129,7 +136,6 @@ body {
             text-align: left;
             width: 149px; } }
     body .todo-container .sort-wrapper {
-      width: 75%;
       margin-left: 15px;
       display: flex;
       flex-direction: row;
