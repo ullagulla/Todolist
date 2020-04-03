@@ -45,7 +45,11 @@ body {
       text-transform: uppercase;
       font-size: 30px;
       padding: 20px;
+      margin-left: 20px;
       text-align: center; }
+      @media (min-width: 990px) {
+        body .todo-container .header-todo {
+          margin-left: 0; } }
     body .todo-container .my-todo-wrapper {
       height: 500px; }
       body .todo-container .my-todo-wrapper .todo-wrapper {
@@ -61,18 +65,18 @@ body {
           color: black;
           padding: 5px; }
       body .todo-container .my-todo-wrapper .add-todo-wrapper {
-        margin-left: 10%;
+        margin-left: 13%;
         display: flex;
         justify-content: center; }
         @media (min-width: 990px) {
           body .todo-container .my-todo-wrapper .add-todo-wrapper {
-            text-align: center;
-            display: block; } }
+            margin-left: 0;
+            display: inline; } }
         body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
           margin-top: 15px; }
           @media (min-width: 990px) {
             body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
-              margin-left: 0; } }
+              margin-left: 10px; } }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
             width: 100px;
             padding: 11px; }
@@ -136,7 +140,7 @@ body {
             text-align: left;
             width: 149px; } }
     body .todo-container .sort-wrapper {
-      margin-left: 15px;
+      margin-left: 30px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
