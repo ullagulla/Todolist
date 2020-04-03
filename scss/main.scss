@@ -1,19 +1,47 @@
 @import "edit";
 
+@mixin tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
 body {
-    height: 100%;
-    position: relative;
     background-image: url("../pictures/414717-PD6STJ-369.jpg");
     background-size: cover;
-    background-position-y: -210px;
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 18px;
-    color: black;
+    background-position-x: -390px;
+    font-size: 14px;
+
+    @include large-tablet() {
+        height: 100%;
+        position: relative;
+        background-position-x: 0px;
+        background-position-y: -210px;
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 18px;
+        color: black;
+    }
 
     .todo-container {
-        margin-left: 57%;
-        margin-right: auto;
-        width: 500px;
+        margin-left: 15%;
+        width: 400px;
+        @include desktop(){
+            margin-left: 57%;
+            margin-right: auto;
+            width: 500px;
+        }
 
         .header-todo {
             text-transform: uppercase;
@@ -49,8 +77,11 @@ body {
                     margin-top: 15px;
 
                     #input1 {
-                        width: 200px;
+                        width: 140px;
                         padding: 11px;
+                        @include desktop(){
+                        width: 200px;
+                        }
 
                         &::placeholder {
                             font-family: 'Shadows Into Light', cursive;
@@ -59,8 +90,12 @@ body {
                     }
 
                     #input2 {
-                        width: 125px;
+                        width: 110px;
                         padding: 5px;
+
+                        @include desktop(){
+                        width: 125px;
+                        }
                     }
 
                     input[type="date"] {
@@ -74,18 +109,25 @@ body {
                     }
 
                     button {
-                        width: 80px;
+                        width: 50px;
                         padding: 11px;
+
+                        @include desktop(){
+                        width: 80px;
+                        }
                     }
                 }
             }
 
             .todos {
+                display: inline-block;
+                width: 130px;
+                margin-left: 15px;
+                @include desktop(){
                 word-break: break-word;
                 margin: 0;
                 width: 220px;
-                display: inline-block;
-                margin-left: 5px;
+                }
 
                 i {
                     margin-right: 10px;
@@ -102,9 +144,15 @@ body {
             }
 
             .todo-date {
-                text-align: center;
-                width: 149px;
+                display: inline-block;
+                text-align: end;
+                width: 130px;
                 margin: 0;
+                @include desktop(){
+                    text-align: left;
+                    width: 149px;
+
+                }
             }
         }
 
@@ -126,12 +174,15 @@ body {
 
 .pagination-wrapper {
     position: absolute;
-    bottom: -100;
-    left: 72%;
+    bottom: 20%;
+    left: 50%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     text-align: center;
     margin-top: 10px;
+    @include desktop(){
+        left: 72%;
+    }
 
     a {
         color: black;

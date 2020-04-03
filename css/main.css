@@ -21,18 +21,27 @@ body .edit-wrapper {
     padding: 11px; }
 
 body {
-  height: 100%;
-  position: relative;
   background-image: url("../pictures/414717-PD6STJ-369.jpg");
   background-size: cover;
-  background-position-y: -210px;
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 18px;
-  color: black; }
+  background-position-x: -390px;
+  font-size: 14px; }
+  @media (min-width: 768px) {
+    body {
+      height: 100%;
+      position: relative;
+      background-position-x: 0px;
+      background-position-y: -210px;
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 18px;
+      color: black; } }
   body .todo-container {
-    margin-left: 57%;
-    margin-right: auto;
-    width: 500px; }
+    margin-left: 15%;
+    width: 400px; }
+    @media (min-width: 990px) {
+      body .todo-container {
+        margin-left: 57%;
+        margin-right: auto;
+        width: 500px; } }
     body .todo-container .header-todo {
       text-transform: uppercase;
       font-size: 30px;
@@ -56,14 +65,20 @@ body {
         body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo {
           margin-top: 15px; }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
-            width: 200px;
+            width: 140px;
             padding: 11px; }
+            @media (min-width: 990px) {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1 {
+                width: 200px; } }
             body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input1::placeholder {
               font-family: 'Shadows Into Light', cursive;
               font-size: 16px; }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
-            width: 125px;
+            width: 110px;
             padding: 5px; }
+            @media (min-width: 990px) {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo #input2 {
+                width: 125px; } }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo input[type="date"] {
             font-family: 'Shadows Into Light', cursive;
             font-size: 16px; }
@@ -71,14 +86,20 @@ body {
             display: none;
             -webkit-appearance: none; }
           body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
-            width: 80px;
+            width: 50px;
             padding: 11px; }
+            @media (min-width: 990px) {
+              body .todo-container .my-todo-wrapper .add-todo-wrapper .add-new-todo button {
+                width: 80px; } }
       body .todo-container .my-todo-wrapper .todos {
-        word-break: break-word;
-        margin: 0;
-        width: 220px;
         display: inline-block;
-        margin-left: 5px; }
+        width: 130px;
+        margin-left: 15px; }
+        @media (min-width: 990px) {
+          body .todo-container .my-todo-wrapper .todos {
+            word-break: break-word;
+            margin: 0;
+            width: 220px; } }
         body .todo-container .my-todo-wrapper .todos i {
           margin-right: 10px; }
           body .todo-container .my-todo-wrapper .todos i:hover {
@@ -87,9 +108,14 @@ body {
       body .todo-container .my-todo-wrapper .todos-active {
         text-decoration: line-through; }
       body .todo-container .my-todo-wrapper .todo-date {
-        text-align: center;
-        width: 149px;
+        display: inline-block;
+        text-align: end;
+        width: 130px;
         margin: 0; }
+        @media (min-width: 990px) {
+          body .todo-container .my-todo-wrapper .todo-date {
+            text-align: left;
+            width: 149px; } }
     body .todo-container .sort-wrapper {
       display: flex;
       flex-direction: row;
@@ -102,11 +128,14 @@ body {
 
 .pagination-wrapper {
   position: absolute;
-  bottom: -100;
-  left: 72%;
+  bottom: 20%;
+  left: 50%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   text-align: center;
   margin-top: 10px; }
+  @media (min-width: 990px) {
+    .pagination-wrapper {
+      left: 72%; } }
   .pagination-wrapper a {
     color: black; }
