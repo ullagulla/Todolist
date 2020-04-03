@@ -36,7 +36,7 @@ body {
 
     .todo-container {
         margin-left: 15%;
-        width: 400px;
+        width: 100%;
         @include desktop(){
             margin-left: 57%;
             margin-right: auto;
@@ -71,10 +71,16 @@ body {
             }
 
             .add-todo-wrapper {
+                @include desktop(){
                 text-align: center;
+                }
 
                 .add-new-todo {
+                    margin-left: 26px;
                     margin-top: 15px;
+                    @include desktop(){
+                        margin-left: 0;
+                    }
 
                     #input1 {
                         width: 140px;
@@ -84,23 +90,31 @@ body {
                         }
 
                         &::placeholder {
+                            font-size: 12px;
                             font-family: 'Shadows Into Light', cursive;
+                            @include desktop(){
                             font-size: 16px;
+                            }
                         }
                     }
 
                     #input2 {
                         width: 110px;
-                        padding: 5px;
+                        padding: 8px;
 
                         @include desktop(){
                         width: 125px;
+                        padding: 5px;
+
                         }
                     }
 
                     input[type="date"] {
                         font-family: 'Shadows Into Light', cursive;
+                        font-size: 12px;
+                        @include desktop(){
                         font-size: 16px;
+                        }
                     }
 
                     input[type="date"]::-webkit-inner-spin-button {
@@ -157,11 +171,19 @@ body {
         }
 
         .sort-wrapper {
+            width: 75%;
+            margin-left: 15px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            text-align: center;
             margin-top: 100px;
+            @include desktop(){
+                width: 100%;
+                margin-left: 0;
+                text-align: center;
+                justify-content: space-around;
+
+            }
 
             a {
                 color: black;
@@ -174,7 +196,7 @@ body {
 
 .pagination-wrapper {
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     left: 50%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
